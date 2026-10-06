@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TechLink | Buy and sell verified second-hand equipment</title>
+<meta name="description" content="Browse verified second-hand electronics and farm machinery in Kenya, or list your own item in minutes.">
+<link rel="icon" href="assets/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1F2937;--amber:#F59E0B;--amber2:#FCD34D;--tint:#FEF3C7;--green:#15803D;--grey:#4B5563;--line:#E5E7EB;--paper:#FFFBF2;
+--head:"Bricolage Grotesque","Trebuchet MS",sans-serif;--body:"Source Sans 3","Segoe UI",Arial,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:#fff;color:var(--ink);font:400 1.05rem/1.5 var(--body)}
+h1,h2,h3{font-family:var(--head);margin:0;line-height:1.1}
+h1{font-size:clamp(2.2rem,5.5vw,3.8rem);font-weight:800}h2{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800}h3{font-size:1.1rem;font-weight:600}
+p{margin:0}a{color:inherit}
+:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 1.25rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;border:2px solid var(--ink);background:#fff;color:var(--ink);font:700 1rem var(--body);padding:.7rem 1.25rem;border-radius:8px;cursor:pointer;text-decoration:none;min-height:46px}
+.btn:hover{background:var(--tint)}
+.btn.go{background:var(--amber);border-color:var(--amber)}.btn.go:hover{background:var(--amber2);border-color:var(--amber2)}
+.btn.ink{background:var(--ink);color:#fff}.btn.ink:hover{background:#111827}
+.btn.sm{padding:.45rem .9rem;min-height:40px;font-size:.95rem}
+.btn.full{width:100%}
+nav.top{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid var(--line)}
+nav.top .wrap{display:flex;align-items:center;justify-content:space-between;min-height:64px;gap:.75rem}
+.brand{display:flex;align-items:center;gap:.5rem;font:800 1.3rem var(--head);text-decoration:none}
+.brand img{height:44px;width:auto;border-radius:6px}
+.links{display:flex;align-items:center;gap:.5rem}
+.links a.t{padding:.5rem .75rem;font-weight:600;text-decoration:none}.links a.t:hover{text-decoration:underline}
+.hero{background:var(--ink);color:#fff;padding:3.5rem 0}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:2.5rem;align-items:center}
+.hero p{font-size:1.2rem;color:#E5E7EB;margin:1rem 0 1.5rem;max-width:34ch}
+.hero .btn.out{background:transparent;color:#fff;border-color:#fff}.hero .btn.out:hover{background:rgba(255,255,255,.12)}
+.cta{display:flex;gap:.75rem;flex-wrap:wrap}
+.shot{position:relative;border-radius:14px;overflow:hidden;border:4px solid var(--amber)}
+.shot img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
+.shot span{position:absolute;left:12px;bottom:12px;background:#fff;color:var(--green);font-weight:700;padding:.3rem .7rem;border-radius:6px}
+.trust{background:var(--tint)}
+.trust .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;padding-top:1.1rem;padding-bottom:1.1rem}
+.trust div{display:flex;gap:.6rem;align-items:center;font-weight:600}
+.trust b{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--amber);flex:none}
+section{padding:3.5rem 0}
+.bar{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center;justify-content:space-between;margin:1.25rem 0 1.5rem}
+.chips{display:flex;gap:.5rem;flex-wrap:wrap}
+.chip{border:2px solid var(--ink);background:#fff;border-radius:999px;padding:.4rem 1rem;font:600 .95rem var(--body);cursor:pointer;min-height:42px}
+.chip[aria-pressed="true"]{background:var(--ink);color:#fff}
+input,select,textarea{font:inherit;color:inherit;border:2px solid #9CA3AF;border-radius:8px;padding:.6rem .75rem;width:100%;background:#fff}
+input:focus,select:focus,textarea:focus{border-color:var(--ink)}
+.bar input{max-width:260px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.25rem}
+.card{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;display:flex;flex-direction:column;box-shadow:0 2px 8px rgba(31,41,55,.08)}
+.ph{position:relative;aspect-ratio:4/3;background:var(--tint);display:grid;place-items:center;font-size:4rem}
+.ph img{width:100%;height:100%;object-fit:cover;display:block}
+.tag{position:absolute;top:10px;left:10px;font-size:.85rem;font-weight:700;padding:.2rem .6rem;border-radius:6px;background:#fff;color:var(--green)}
+.tag.pend{background:var(--amber2);color:var(--ink)}
+.body{padding:.9rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
+.price{font:800 1.3rem var(--head)}
+.meta{color:var(--grey);font-size:.95rem}
+.acts{display:flex;gap:.5rem;margin-top:auto;padding-top:.6rem}.acts .btn{flex:1}
+.mine{background:var(--paper);border:2px dashed var(--amber);border-radius:12px;padding:1.25rem;margin-bottom:2rem}
+.mine h3{margin-bottom:.9rem}
+.empty{grid-column:1/-1;text-align:center;padding:2rem;color:var(--grey)}
+.steps{background:var(--ink);color:#fff}
+.steps .grid{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin:1.5rem 0}
+.steps .s{border-top:4px solid var(--amber);padding-top:.8rem}.steps .s b{font:800 2rem var(--head);color:var(--amber)}.steps .s p{color:#E5E7EB}
+footer{background:var(--tint);padding:3rem 0;text-align:center}
+footer p{margin:.5rem 0 1.25rem;color:var(--grey)}
+dialog{border:0;border-radius:14px;padding:0;width:min(560px,94vw);max-height:92vh}
+dialog::backdrop{background:rgba(17,24,39,.6)}
+.dh{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.25rem;background:var(--ink);color:#fff}
+.dh .x{background:none;border:0;color:#fff;font-size:1.7rem;cursor:pointer;line-height:1;min-width:44px;min-height:44px}
+.db{padding:1.25rem;display:grid;gap:.9rem}
+label{font-weight:600;display:grid;gap:.3rem}label small{font-weight:400;color:var(--grey)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+.err{color:#B91C1C;font-size:.9rem;font-weight:600;min-height:1.1em}
+.pre{display:flex;gap:.5rem;flex-wrap:wrap}.pre img{width:78px;height:78px;object-fit:cover;border-radius:8px;border:2px solid var(--amber)}
+.det img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:10px}
+.det .ph{border-radius:10px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:.8rem 1.2rem;border-radius:10px;border-left:6px solid var(--amber);z-index:50;max-width:92vw}
+.toast[hidden]{display:none}
+@media(max-width:800px){.hero .wrap{grid-template-columns:1fr}.trust .wrap{grid-template-columns:1fr}.links a.t{display:none}.row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav class="top"><div class="wrap">
+  <a class="brand" href="#top"><img src="assets/logo.jpg" alt="">TechLink</a>
+  <div class="links"><a class="t" href="#browse">Browse</a><a class="t" href="#how">How it works</a>
+  <button class="btn go sm" data-sell>Sell an item</button></div>
+</div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+  <div>
+    <h1>Buy and sell second-hand gear you can trust.</h1>
+    <p>Every listing is checked for proof of ownership.</p>
+    <div class="cta">
+      <a class="btn go" href="#browse">Browse items</a>
+      <button class="btn out" data-sell>Sell an item</button>
+    </div>
+  </div>
+  <div class="shot"><img src="assets/tractor.jpg" alt="Farm tractor listed on TechLink"><span>✓ Ownership verified</span></div>
+</div></header>
+
+<div class="trust"><div class="wrap">
+  <div><b>✓</b>Ownership checked</div><div><b>🔒</b>Safe deals</div><div><b>🚚</b>Trusted delivery</div>
+</div></div>
+
+<section id="browse"><div class="wrap">
+  <h2>Browse items</h2>
+  <div class="bar">
+    <div class="chips" role="group" aria-label="Category">
+      <button class="chip" data-cat="all" aria-pressed="true">All</button>
+      <button class="chip" data-cat="Machinery" aria-pressed="false">Machinery</button>
+      <button class="chip" data-cat="Electronics" aria-pressed="false">Electronics</button>
+    </div>
+    <input id="q" type="search" placeholder="Search items" aria-label="Search items">
+  </div>
+  <div id="mine" class="mine" hidden><h3>Your listings</h3><div class="grid" id="mineGrid"></div></div>
+  <div class="grid" id="grid"></div>
+</div></section>
+
+<section class="steps" id="how"><div class="wrap">
+  <h2>Sell in 3 steps</h2>
+  <div class="grid">
+    <div class="s"><b>1</b><h3>List it</h3><p>Add photos, price and proof of ownership.</p></div>
+    <div class="s"><b>2</b><h3>We verify</h3><p>We review it before it goes live.</p></div>
+    <div class="s"><b>3</b><h3>Sell and deliver</h3><p>Chat with buyers and ship safely.</p></div>
+  </div>
+  <button class="btn go" data-sell>Start selling</button>
+</div></section>
+
+<footer><div class="wrap">
+  <h2>Got something to sell?</h2>
+  <p>Kenya first. East Africa next.</p>
+  <div class="cta" style="justify-content:center">
+    <button class="btn go" data-sell>Sell an item</button>
+    <a class="btn" href="#top">Back to top</a>
+  </div>
+</div></footer>
+
+<dialog id="sellDlg" aria-labelledby="sellT">
+  <div class="dh"><h3 id="sellT">Sell an item</h3><button class="x" data-close aria-label="Close">×</button></div>
+  <form class="db" id="sellForm" novalidate>
+    <label>Item name<input name="title" maxlength="60" placeholder="e.g. Disc harrow" required></label>
+    <div class="row">
+      <label>Category<select name="cat"><option>Machinery</option><option>Electronics</option></select></label>
+      <label>Condition<select name="cond"><option>Good</option><option>Fair</option><option>Needs repair</option></select></label>
+    </div>
+    <div class="row">
+      <label>Price (KSh)<input name="price" type="number" min="1" inputmode="numeric" placeholder="50000" required></label>
+      <label>Town<input name="loc" maxlength="40" placeholder="Nakuru" required></label>
+    </div>
+    <label>Description<textarea name="desc" rows="3" maxlength="300" placeholder="Age, condition, what's included"></textarea></label>
+    <label>WhatsApp number <small>(optional, for buyers)</small><input name="phone" type="tel" inputmode="tel" placeholder="07XX XXX XXX"></label>
+    <label>Photo <small>(first image is used)</small><input id="photos" type="file" accept="image/*" multiple></label>
+    <div class="pre" id="pre"></div>
+    <label>Proof of ownership <small>(receipt, logbook or ID. Reviewed by TechLink only)</small><input id="proof" type="file" accept="image/*,.pdf"></label>
+    <div class="err" id="err" role="alert"></div>
+    <button class="btn go full" type="submit">Submit for review</button>
+  </form>
+</dialog>
+
+<dialog id="itemDlg" aria-labelledby="itemT">
+  <div class="dh"><h3 id="itemT"></h3><button class="x" data-close aria-label="Close">×</button></div>
+  <div class="db det" id="itemBody"></div>
+</dialog>
+
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script>
+(function(){
+var KEY='techlink.listings.v1';
+var SAMPLE=[
+ {id:'s1',title:'Square hay baler',cat:'Machinery',cond:'Fair',price:185000,loc:'Nakuru',img:'assets/baler.jpg',desc:'Works well. New belts fitted last season.'},
+ {id:'s2',title:'Tractor seed planter',cat:'Machinery',cond:'Needs repair',price:95000,loc:'Eldoret',img:'assets/seeder.jpg',desc:'Frame is sound. Needs two new seed tubes.'},
+ {id:'s3',title:'Farm tractor',cat:'Machinery',cond:'Needs repair',price:420000,loc:'Kitale',img:'assets/tractor.jpg',desc:'Good tyres. Engine needs work.'},
+ {id:'s4',title:'Laptop, 8GB RAM',cat:'Electronics',cond:'Good',price:28000,loc:'Nairobi',emoji:'💻',desc:'Used for one year. Charger included.'},
+ {id:'s5',title:'Disc harrow',cat:'Machinery',cond:'Fair',price:70000,loc:'Nyeri',img:'assets/harrow.jpg',desc:'Discs are sharp. Hitch included.'},
+ {id:'s6',title:'Smartphone, 128GB',cat:'Electronics',cond:'Good',price:14500,loc:'Mombasa',emoji:'📱',desc:'Screen is clean. Battery health is good.'},
+ {id:'s7',title:'Tractor rear axle and wheels',cat:'Machinery',cond:'Fair',price:60000,loc:'Nakuru',img:'assets/axle.jpg',desc:'Spares for a farm tractor. Pickup only.'},
+ {id:'s8',title:'Farm trailer',cat:'Machinery',cond:'Fair',price:150000,loc:'Nyahururu',img:'assets/trailer.jpg',desc:'Solid body. Some surface rust.'}
+];
+var $=function(s){return document.querySelector(s)};
+var cat='all',mine=load(),pics=[];
+function load(){try{return JSON.parse(localStorage.getItem(KEY))||[]}catch(e){return[]}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(mine));return true}catch(e){return false}}
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function ksh(n){return 'KSh '+Number(n).toLocaleString('en-KE')}
+function toast(m){var t=$('#toast');t.textContent=m;t.hidden=false;clearTimeout(toast.t);toast.t=setTimeout(function(){t.hidden=true},3200)}
+function photo(i){return i.img?'<img src="'+esc(i.img)+'" alt="'+esc(i.title)+'" loading="lazy">':(i.emoji?'<span aria-hidden="true">'+i.emoji+'</span>':'<span aria-hidden="true">📦</span>')}
+function card(i,own){
+  return '<article class="card"><div class="ph">'+photo(i)+'<span class="tag'+(own?' pend':'')+'">'+(own?'Pending review':'✓ Verified')+'</span></div>'+
+  '<div class="body"><h3>'+esc(i.title)+'</h3><div class="price">'+ksh(i.price)+'</div><div class="meta">'+esc(i.cond)+' · '+esc(i.loc)+'</div>'+
+  '<div class="acts"><button class="btn sm go" data-view="'+i.id+'">View</button>'+(own?'<button class="btn sm" data-del="'+i.id+'">Delete</button>':'<button class="btn sm" data-chat="'+i.id+'">Chat</button>')+'</div></div></article>';
+}
+function find(id){return SAMPLE.concat(mine).filter(function(i){return i.id===id})[0]}
+function render(){
+  var q=$('#q').value.trim().toLowerCase();
+  var list=SAMPLE.filter(function(i){return(cat==='all'||i.cat===cat)&&(!q||(i.title+i.loc).toLowerCase().indexOf(q)>-1)});
+  $('#grid').innerHTML=list.length?list.map(function(i){return card(i,false)}).join(''):'<p class="empty">No items match. Try another search or <button class="btn sm go" data-sell>sell yours</button></p>';
+  $('#mine').hidden=!mine.length;
+  $('#mineGrid').innerHTML=mine.map(function(i){return card(i,true)}).join('');
+}
+function chatLink(i){var t='Hi, I saw "'+i.title+'" on TechLink ('+ksh(i.price)+'). Is it still available?';
+  var p=(i.phone||'').replace(/\D/g,'');if(p.length===10&&p[0]==='0')p='254'+p.slice(1);
+  return 'https://wa.me/'+p+'?text='+encodeURIComponent(t)}
+function openItem(id){
+  var i=find(id);if(!i)return;
+  $('#itemT').textContent=i.title;
+  $('#itemBody').innerHTML='<div class="ph">'+photo(i)+'</div><div class="price">'+ksh(i.price)+'</div><div class="meta">'+esc(i.cat)+' · '+esc(i.cond)+' · '+esc(i.loc)+'</div><p>'+esc(i.desc||'No description.')+'</p>'+
+   '<a class="btn go full" target="_blank" rel="noopener" href="'+chatLink(i)+'">Chat on WhatsApp</a>'+
+   '<button class="btn full" data-deliv="1">Arrange delivery</button>';
+  $('#itemDlg').showModal();
+}
+function openSell(){$('#err').textContent='';$('#sellDlg').showModal()}
+function compress(file){return new Promise(function(res,rej){
+  var r=new FileReader();r.onerror=rej;
+  r.onload=function(){var im=new Image();im.onerror=rej;im.onload=function(){
+    var s=Math.min(1,720/Math.max(im.width,im.height)),c=document.createElement('canvas');
+    c.width=Math.round(im.width*s);c.height=Math.round(im.height*s);c.getContext('2d').drawImage(im,0,0,c.width,c.height);
+    res(c.toDataURL('image/jpeg',0.7))};im.src=r.result};
+  r.readAsDataURL(file)})}
+document.addEventListener('click',function(e){
+  var t=e.target.closest('button,a');if(!t)return;
+  if(t.hasAttribute('data-sell')){e.preventDefault();$('#itemDlg').close();openSell()}
+  else if(t.hasAttribute('data-close')){t.closest('dialog').close()}
+  else if(t.dataset.cat){cat=t.dataset.cat;document.querySelectorAll('.chip').forEach(function(c){c.setAttribute('aria-pressed',c===t)});render()}
+  else if(t.dataset.view){openItem(t.dataset.view)}
+  else if(t.dataset.chat){window.open(chatLink(find(t.dataset.chat)),'_blank','noopener')}
+  else if(t.dataset.del){if(confirm('Delete this listing?')){mine=mine.filter(function(i){return i.id!==t.dataset.del});save();render();toast('Listing deleted')}}
+  else if(t.hasAttribute('data-deliv')){toast('Delivery request noted. A partner will contact you.')}
+});
+document.querySelectorAll('dialog').forEach(function(d){d.addEventListener('click',function(e){if(e.target===d)d.close()})});
+$('#q').addEventListener('input',render);
+$('#photos').addEventListener('change',function(e){
+  $('#err').textContent='';var files=[].slice.call(e.target.files,0,1);pics=[];$('#pre').innerHTML='';
+  Promise.all(files.map(compress)).then(function(a){pics=a;$('#pre').innerHTML=a.map(function(u){return '<img alt="Photo preview" src="'+u+'">'}).join('')})
+  .catch(function(){$('#err').textContent='One photo could not be read. Try a JPG or PNG.'});
+});
+$('#sellForm').addEventListener('submit',function(e){
+  e.preventDefault();var f=e.target,err=$('#err');
+  var title=f.title.value.trim(),price=Number(f.price.value),loc=f.loc.value.trim();
+  if(!title){err.textContent='Add an item name.';f.title.focus();return}
+  if(!(price>0)){err.textContent='Enter a price in KSh.';f.price.focus();return}
+  if(!loc){err.textContent='Add the town where the item is.';f.loc.focus();return}
+  if(!pics.length){err.textContent='Add at least one photo.';return}
+  if(!$('#proof').files.length){err.textContent='Add proof of ownership so we can verify your listing.';return}
+  mine.unshift({id:'u'+Date.now(),title:title,cat:f.cat.value,cond:f.cond.value,price:price,loc:loc,desc:f.desc.value.trim(),phone:f.phone.value.trim(),img:pics[0],proofName:$('#proof').files[0].name});
+  if(!save()){mine.shift();err.textContent='Browser storage is full. Delete a listing or use fewer photos.';return}
+  f.reset();pics=[];$('#pre').innerHTML='';$('#sellDlg').close();render();
+  toast('Submitted for review');location.hash='browse';
+});
+render();
+})();
+</script>
+</body>
+</html>
