@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>TechLink | Buy and sell verified second-hand equipment</title>
-<meta name="description" content="Browse verified second-hand electronics and farm machinery in Kenya, or list your own item in minutes.">
+<meta name="description" content="Browse verified second-hand  farm machinery in Kenya, or list your own item in minutes.">
 <link rel="icon" href="assets/logo yetu.jpeg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -115,7 +115,6 @@ label{font-weight:600;display:grid;gap:.3rem}label small{font-weight:400;color:v
     <div class="chips" role="group" aria-label="Category">
       <button class="chip" data-cat="all" aria-pressed="true">All</button>
       <button class="chip" data-cat="Machinery" aria-pressed="false">Machinery</button>
-      <button class="chip" data-cat="Electronics" aria-pressed="false">Electronics</button>
     </div>
     <input id="q" type="search" placeholder="Search items" aria-label="Search items">
   </div>
@@ -147,7 +146,7 @@ label{font-weight:600;display:grid;gap:.3rem}label small{font-weight:400;color:v
   <form class="db" id="sellForm" novalidate>
     <label>Item name<input name="title" maxlength="60" placeholder="e.g. Disc harrow" required></label>
     <div class="row">
-      <label>Category<select name="cat"><option>Machinery</option><option>Electronics</option></select></label>
+      <label>Category<select name="cat"><option>Machinery</option></select></label>
       <label>Condition<select name="cond"><option>Good</option><option>Fair</option><option>Needs repair</option></select></label>
     </div>
     <div class="row">
@@ -178,10 +177,8 @@ var SAMPLE=[
  {id:'s1',title:'Square hay baler',cat:'Machinery',cond:'Fair',price:185000,loc:'Nakuru',img:'hay baler.jfif',desc:'Works well. New belts fitted last season.'},
  {id:'s2',title:'Tractor seed planter',cat:'Machinery',cond:'Needs repair',price:95000,loc:'Eldoret',img:'seeder.jpg',desc:'Frame is sound. Needs two new seed tubes.'},
  {id:'s3',title:'Farm tractor',cat:'Machinery',cond:'Needs repair',price:420000,loc:'Kitale',img:'assets/tractor.jpg',desc:'Good tyres. Engine needs work.'},
- {id:'s4',title:'Laptop, 8GB RAM',cat:'Electronics',cond:'Good',price:28000,loc:'Nairobi',emoji:'💻',desc:'Used for one year. Charger included.'},
- {id:'s5',title:'Disc harrow',cat:'Machinery',cond:'Fair',price:70000,loc:'Nyeri',img:'assets/harrow.jpg',desc:'Discs are sharp. Hitch included.'},
- {id:'s6',title:'Smartphone, 128GB',cat:'Electronics',cond:'Good',price:14500,loc:'Mombasa',emoji:'📱',desc:'Screen is clean. Battery health is good.'},
- {id:'s7',title:'Tractor rear axle and wheels',cat:'Machinery',cond:'Fair',price:60000,loc:'Nakuru',img:'axle.jpg',desc:'Spares for a farm tractor. Pickup only.'},
+  {id:'s5',title:'Disc harrow',cat:'Machinery',cond:'Fair',price:70000,loc:'Nyeri',img:'assets/harrow.jpg',desc:'Discs are sharp. Hitch included.'},
+  {id:'s7',title:'Tractor rear axle and wheels',cat:'Machinery',cond:'Fair',price:60000,loc:'Nakuru',img:'axle.jpg',desc:'Spares for a farm tractor. Pickup only.'},
  {id:'s8',title:'Farm trailer',cat:'Machinery',cond:'Fair',price:150000,loc:'Nyahururu',img:'trailer.jpg',desc:'Solid body. Some surface rust.'}
 ];
 var $=function(s){return document.querySelector(s)};
